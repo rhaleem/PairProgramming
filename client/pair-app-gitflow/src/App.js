@@ -32,13 +32,9 @@ class App extends Component {
         <div className="App">
           <h1>World's Most Secure Email Service</h1>
           <Form postComment={this.postComment} />
-          {
-          this.state.success === 'Registration SuccessFul' ? 
-          <h1 className='successful'>{this.state.success}</h1> 
-          : 
-          <h1 className='unsuccessful'>{this.state.success}</h1>
-          }
-
+          <h1 
+          className={this.state.success === "Registration Successful" ? "successful" : "unsuccessful"}
+          >{this.state.success}</h1>
         </div>
       </>
     );
