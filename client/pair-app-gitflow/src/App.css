@@ -1,5 +1,5 @@
 * {
-  background-color: lightblue;
+  background-color: greenyellow;
 }
 
 .App {
@@ -9,6 +9,7 @@
   align-items: center;
   margin: 25% 0;
 }
+
 .form {
   margin-top: 25px;
   display: flex;
@@ -39,10 +40,12 @@ form input {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
 .unsuccessful {
   color: red;
   font-size: 15px;
 }
+
 .successful {
   color: green;
   font-size: 15px;
