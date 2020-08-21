@@ -6,12 +6,12 @@ const fs = require("fs");
 const signedUpListFile = path.join(__dirname, "../data/signedUpList.json");
 const signedUpData = fs.readFileSync(signedUpListFile);
 
-router.post("/users", () => addNewUser);
-router.get("/users", () => console.log("get/users is working"));
+router.post("/", (req, res) => res.json(addNewUser(req, res)));
+router.get("/", (_req, res) => res.json(listUsers()));
 
-function addNewUser(req, res) {
-  res.json({ status: "signed up" });
-
+function addNewUser(req, _res) {
+  // res.json({ status: "signed up" });
+  console.log("req.body", req.body);
   const usersArray = listUsers();
 
   let newUser = {
@@ -26,8 +26,9 @@ function addNewUser(req, res) {
 }
 
 function listUsers() {
-  console.log("working");
   return JSON.parse(signedUpData);
 }
+
+// console.log(listUsers());
 
 module.exports = router;
